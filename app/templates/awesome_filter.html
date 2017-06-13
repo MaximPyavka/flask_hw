@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST" action="/awe_filter">
+    <select name="1st_field">
+        <option value="CustomerID">CustomerID</option>
+
+        <option value="Fax">Fax</option>
+
+        <option value="Email">Email</option>
+    </select>
+    <select name="2nd_field">
+        <option value="CustomerID">CustomerID</option>
+
+        <option value="Fax">Fax</option>
+
+        <option value="Email">Email</option>
+    </select>
+    <select name="3rd_field">
+        <option value="CustomerID">CustomerID</option>
+
+        <option value="Fax">Fax</option>
+
+        <option value="Email">Email</option>
+    </select><br>
+      <input type="radio" name="ordering_way" value="ASC">ASC<br>
+      <input type="radio" name="ordering_way" value="DESC"> DESC<br>
+      <input type="submit">
+</form>
+
+
+{% endblock content%}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REG USER</title>
+</head>
+<body>
+
+<form method="POST" action="/reg-user">
+  <input type="text" name="login">
+  <input type="password" name="password">
+  <input type="submit">
+</form>
+<p>
+    {% if data %}
+    {{ data.login }}
+    {{ data.password }}
+    {% endif %}
+</p>
+</body>
+</html>

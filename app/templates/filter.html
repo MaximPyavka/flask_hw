@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST" action="/filter">
+  <input type="text" name="company"><br>
+  <input type="text" name="city"><br>
+  <input type="text" name="state"><br>
+  <input type="submit">
+</form>
+
+{% for customer in data %}
+<p>
+    {{ customer[0] }} {{ customer[1] }} {{ customer[2] }} {{ customer[3] }}
+</p>
+
+{% endfor %}
+
+{% endblock content%}
