@@ -1,6 +1,7 @@
 from flask import render_template, request, abort, jsonify
 from flask.views import MethodView
 from app.db_utils.create_db import connect_db
+from .db_utils.models import User
 
 from app.utils import randomword
 
@@ -104,6 +105,8 @@ class AwesomeView(MethodView):
         query = "SELECT * FROM Customers ORDER BY {} {}"
         tab = conn.execute(query.format(",".join(order), form['ordering_way']))
         tabs = [i for i in tab]
+        tabs = [User(i).get_dict() for i in tabs]
+        print(tabs, sep="\n")
         conn.close()
         return jsonify(tabs)
         # return render_template("awesome_filter.html", data=tabs)
